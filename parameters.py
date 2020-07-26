@@ -53,6 +53,8 @@ class Gameschema:
             print("\nPLAYER 2 WINS!\n")
         else:
             return self.params
+        for param in self.params:
+            self.params[param] = " "
 
     def show_result(self):
         print(f'  {self.params["p1"]} | {self.params["p2"]} | {self.params["p3"]}')
