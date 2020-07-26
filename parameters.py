@@ -1,7 +1,7 @@
 class Gameschema:
     def __init__(self):
         self.params = {"p1": " ", "p2": " ", "p3": " ", "p4": " ", "p5": " ", "p6": " ", "p7": " ", "p8": " ", "p9": " "}
-        self.players = [1, 2]
+        self.player = '2'
         
     def get_input(self):
         command = input("Your turn: Enter the command: (x, o):\t")
@@ -17,10 +17,13 @@ class Gameschema:
         self.params[self.col] = self.command
         return self.params
 
-    # def find_player(self):
-    #     iteration = iter(self.players)
-    #     for i in range(len(self.players)):
-    #         next(iteration)
+    def find_player(self):
+        if self.player == '2':
+            self.player = '1'
+        else:
+            self.player = '2'
+        print(f'\nPlayer {self.player}s turn.\n')
+        return self.player
 
     def find_winner(self):
         if self.params["p1"]==self.params["p2"]==self.params["p3"]=="x":

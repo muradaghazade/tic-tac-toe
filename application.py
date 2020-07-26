@@ -1,10 +1,11 @@
 from parameters import Gameschema
 
+
 class Application:
     def run(self):
         game = Gameschema()
         while True:
-            # game.find_player()
+            game.find_player()
             game.validate_command()
             game.show_result()
             game.find_winner()
